@@ -55,6 +55,8 @@ public class Server {
    * Constructor. Handles the required injections.
    *
    * @param listener injected listener.
+   * @param featureRepository Feature repository.
+   * @param promiseRepository Promise repository.
    */
   public Server(
       Listener listener,
@@ -178,6 +180,7 @@ public class Server {
    * @throws UnsupportedFeatureException Thrown if the feature isn't among the list of supported
    *     featured.
    * @throws OccurenceConstraintException Thrown if the request isn't valid.
+   * @throws NotConnectedException Thrown if trying to send without being connected.
    */
   public CompletableFuture<Confirmation> send(UUID sessionIndex, Request request)
       throws UnsupportedFeatureException, OccurenceConstraintException, NotConnectedException {

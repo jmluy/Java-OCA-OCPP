@@ -51,6 +51,8 @@ public class Client {
    * Handle required injections.
    *
    * @param session Inject session object
+   * @param featureRepository Feature repository
+   * @param promiseRepository Promise repository
    * @see Session
    */
   public Client(

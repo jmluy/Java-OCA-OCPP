@@ -56,6 +56,8 @@ public class Session implements ISession {
    *
    * @param communicator send and receive messages.
    * @param queue store and restore requests based on unique ids.
+   * @param fulfiller promise fulfiller.
+   * @param featureRepository feature repository.
    */
   public Session(
       Communicator communicator,
@@ -102,6 +104,7 @@ public class Session implements ISession {
    * Send a {@link Confirmation} to a {@link Request}
    *
    * @param uniqueId the unique identification the receiver expects.
+   * @param action the action name of the feature.
    * @param confirmation the {@link Confirmation} payload to send.
    */
   public void sendConfirmation(String uniqueId, String action, Confirmation confirmation) {

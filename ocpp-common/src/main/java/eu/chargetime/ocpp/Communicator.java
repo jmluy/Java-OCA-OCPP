@@ -55,6 +55,7 @@ public abstract class Communicator {
    *
    * @param payload the raw formatted payload.
    * @param type the expected return type.
+   * @param <T> the object created from payload
    * @return the unpacked payload.
    * @throws Exception error occurred while converting.
    */
@@ -92,6 +93,7 @@ public abstract class Communicator {
    * Create a call error envelope to transmit.
    *
    * @param uniqueId the id the receiver expects.
+   * @param action the action name of the feature.
    * @param errorCode an OCPP error code.
    * @param errorDescription an associated error description.
    * @return a fully packed message ready to send.
@@ -198,6 +200,7 @@ public abstract class Communicator {
    * Send a {@link Confirmation} reply to a {@link Request}.
    *
    * @param uniqueId the id the receiver expects.
+   * @param action the action name of the feature.
    * @param confirmation the outgoing {@link Confirmation}
    */
   public void sendCallResult(String uniqueId, String action, Confirmation confirmation) {
@@ -217,6 +220,7 @@ public abstract class Communicator {
    * Send an error. If offline, the message is thrown away.
    *
    * @param uniqueId the id the receiver expects a response to.
+   * @param action the action name of the feature.
    * @param errorCode an OCPP error Code
    * @param errorDescription a associated error description.
    */

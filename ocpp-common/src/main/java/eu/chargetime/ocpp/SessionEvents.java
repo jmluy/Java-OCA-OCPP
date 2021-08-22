@@ -46,6 +46,7 @@ public interface SessionEvents {
    *
    * @param request the {@link Request}.
    * @return a {@link Confirmation} to send as a response.
+   * @throws UnsupportedFeatureException thrown if the feature isn't supported.
    */
   Confirmation handleRequest(Request request) throws UnsupportedFeatureException;
 
